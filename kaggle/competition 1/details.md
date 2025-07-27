@@ -21,6 +21,7 @@ Predict whether a person is an Introvert or Extrovert from their social behavior
 ---
 
 ## 📄 Files Included
+- [notebook.ipynb](notebook.ipynb) — My Kaggle notebook code
 - [submission.csv](submission.csv) — My actual competition predictions
 
 ---
