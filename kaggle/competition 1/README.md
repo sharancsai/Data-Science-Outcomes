@@ -5,9 +5,8 @@
 **Score (Accuracy):** 0.973279  
 **Leaderboard Rank:** Top 1%  
 **Submission Date:** July 2025
-**My Kaggle profile:** https://www.kaggle.com/sharanio
 ---
-
+**My Kaggle profile:** https://www.kaggle.com/sharanio
 ## 🎯 Task
 Predict whether a person is an Introvert or Extrovert from their social behavior and personality traits using a synthetic tabular dataset.
 
