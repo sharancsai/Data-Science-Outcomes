@@ -1,12 +1,11 @@
 # Kaggle Playground Series S5E7: Predict the Introverts from the Extroverts
 
 **Competition:** [Playground Series S5E7](https://www.kaggle.com/competitions/playground-series-s5e7/overview)
-**My Kaggle profile:** https://www.kaggle.com/sharanio
 **My Leaderboard Username:** Sharan.io
 **Score (Accuracy):** 0.973279  
 **Leaderboard Rank:** Top 1%  
 **Submission Date:** July 2025
-
+**My Kaggle profile:** https://www.kaggle.com/sharanio
 ---
 
 ## 🎯 Task
