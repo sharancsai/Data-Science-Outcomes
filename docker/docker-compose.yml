@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  aws-learning-agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - MODEL_TYPE=huggingface
+      - MODEL_NAME=microsoft/DialoGPT-medium
+      - DATABASE_URL=sqlite:///./aws_agent.db
+      - LOG_LEVEL=INFO
+    volumes:
+      - ../data:/app/data
+      - ../logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  streamlit-ui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://aws-learning-agent:8000
+    depends_on:
+      - aws-learning-agent
+    restart: unless-stopped
+
+  # Optional: Ollama service for local model deployment
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    # Uncomment below lines if you have GPU support
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  ollama_data:
+
+networks:
+  default:
+    name: aws-learning-network
