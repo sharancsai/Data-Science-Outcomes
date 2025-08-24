@@ -1,0 +1,43 @@
+# Core LangChain dependencies
+langchain==0.2.14
+langchain-community==0.2.12
+langchain-core==0.2.33
+langchain-huggingface==0.0.3
+
+# Model integrations
+huggingface-hub==0.24.6
+transformers==4.44.2
+torch==2.4.1
+sentence-transformers==3.0.1
+
+# Local model support
+ollama==0.3.2
+
+# Web interface
+fastapi==0.112.2
+uvicorn[standard]==0.30.6
+streamlit==1.37.1
+
+# Database and storage
+sqlite3
+sqlalchemy==2.0.32
+
+# AWS integration (optional - using boto3-stubs for type hints without AWS dependency)
+boto3-stubs[essential]==1.35.0
+
+# Utilities
+python-dotenv==1.0.1
+pydantic==2.8.2
+requests==2.32.3
+numpy==1.24.4
+pandas==2.0.3
+
+# Development and testing
+pytest==8.3.2
+pytest-asyncio==0.23.8
+black==24.8.0
+flake8==7.1.1
+
+# Notebook support
+jupyter==1.0.0
+ipywidgets==8.1.3
